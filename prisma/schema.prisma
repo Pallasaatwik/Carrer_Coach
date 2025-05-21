@@ -13,11 +13,11 @@ model  User {
   email         String    @unique
   name          String?
   imageUrl      String?
-  industry      String    // Combined industry-subindustry (e.g., "tech-software-development")
+  industry      String?   // Combined industry-subindustry (e.g., "tech-software-development")
   industryInsight IndustryInsight? @relation(fields: [industry], references: [industry])
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  
+
   // Profile fields
   bio           String?
   experience    Int?      // Years of experience
